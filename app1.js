@@ -108,14 +108,22 @@ class PeopleList extends React.Component {
                     const {first, last} = person.name
                     const {thumbnail}=person.picture
                     const {age}=person.dob
+                    const {gender}=person
+                    const {city, postcode, state,country}=person.location
+                    const {number,name}=person.location.street
                     return (
-                            <div className="people_all">  <li className="people_each" key={i} className="people">{first} {last} {age} Years old</li><img src={thumbnail} /></div>
+                            <div className="people_all">  <li className="people_each" key={i} >
+                          <p> {first} {last} {age} Years old {gender}</p>
+                          <p><span>Address: {number} {name}</span><br />
+                          <span> {postcode} {city} {country}</span></p>
+                          </li><img src={thumbnail} /></div>
                             )
                 })}
-                <button onClick={()=>this.shoot(count)}>Print New List</button><span className="badge badge-info badge1">Actual people: {count}</span><br/>
-                <button onClick={()=>this.shoot("add")}>+10</button><br/>
+                <button onClick={()=>this.newrequest()}>Reload</button>
+                <button onClick={()=>this.shoot("add")}>+10</button>
                 <button onClick={()=>this.shoot("sub")}>-10</button>
                 <PrevState count={count-10} />
+                <ActualState count={count} />
             </ol>
     }
   }
@@ -129,5 +137,10 @@ class PeopleList extends React.Component {
     return(
       <span class="badge badge-info badge1">prev people:<span>{props.count}</span> </span>
     )
+  }
 
+  function ActualState(props){
+    return(
+      <span className="badge badge-info badge1">Actual people:<span>{props.count}</span></span>
+    )
   }
