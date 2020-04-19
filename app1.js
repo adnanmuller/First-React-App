@@ -71,8 +71,9 @@ class PeopleList extends React.Component {
                 {data.map((person, i) => {
                     const {first, last} = person.name
                     const {thumbnail}=person.picture
+                    const {age}=person.dob
                     return (
-                            <div>  <li key={i} className="people">{first} {last}</li><img src={thumbnail} /></div>
+                            <div>  <li key={i} className="people">{first} {last} {age} Years old</li><img src={thumbnail} /></div>
                             )
                 })}
                 <button onClick={()=>this.shoot(count)}>Print New List</button><br/>
