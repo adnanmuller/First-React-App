@@ -1,10 +1,25 @@
+
+body{width: 100%;background-image: url("/img/world.jpg");background-repeat: no-repeat;background-position: 50% 10%;
+                                  background-attachment: fixed;}
+
+h1{text-align: center;}
+
+.wrapperMain{width: 30%; margin:0 auto}
+
+#root2{border: solid grey 2px;
+    padding-top: 15px;
+  margin-bottom: 50px;}
+
 .people_all{background-color:rgba(66,103,178,0.5);
-            margin-bottom:1px;
+            margin:0 auto;
+            margin-bottom: 2px;
             width: 300px;
           }
 
-          .people_all p{text-align: center;margin: 0;
-                        line-height: 18px}
+.people_all p{text-align: center;margin: 0;
+              line-height: 18px}
+
+.PeopleList{ margin:0 auto;padding: 0;}
 
 .badge1{margin-right: 2px;
         display: block;
@@ -24,3 +39,7 @@ ul .people_each {list-style-type: none;}
 .name{text-align: center;font-size: 22px;}
 
 .ageGender{text-align: center;font-size: 18px;}
+
+.btn{margin:1px;}
+
+.badge{margin:1px;}

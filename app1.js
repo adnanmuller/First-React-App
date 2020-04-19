@@ -123,11 +123,13 @@ class PeopleList extends React.Component {
                           </li></div>
                             )
                 })}
-                <button onClick={()=>this.newrequest()}>Reload</button>
-                <button onClick={()=>this.shoot("add")}>+10</button>
-                <button onClick={()=>this.shoot("sub")}>-10</button>
+                <div id="command">
+                <button className="btn btn-dark" onClick={()=>this.newrequest()}>Reload</button>
+                <button className="btn btn-dark" onClick={()=>this.shoot("add")}>+10</button>
+                <button className="btn btn-dark" onClick={()=>this.shoot("sub")}>-10</button>
                 <PrevState count={count-10} />
                 <ActualState count={count} />
+                </div>
             </ul>
     }
   }
