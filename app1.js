@@ -23,8 +23,8 @@ class PeopleList extends React.Component {
             data: [],
             loaded: false,
             loading: false,
-            count:0,
-            prevCount:10
+            count:10,
+            prevCount:0
 
 
         }
@@ -53,10 +53,7 @@ class PeopleList extends React.Component {
 
 
 
- /*getSnapshotBeforeUpdate(prevProps, prevState) {
-    var test=prevProps.count;
-    console.log(test);
-  }*/
+
 
   newrequest(){
     this.setState({loading:true})
@@ -73,14 +70,46 @@ class PeopleList extends React.Component {
 
     shoot(flag){
       switch (flag) {
-        case "add":
+        case "add1":
+          this.add(1)
+          this.newrequest();
+          break;
+          case "sub1":
+            this.sub(1)
+            this.newrequest();
+            break;
+        case "add10":
           this.add(10)
           this.newrequest();
           break;
-          case "sub":
+          case "sub10":
             this.sub(10)
             this.newrequest();
             break;
+            case "add20":
+              this.add(20)
+              this.newrequest();
+              break;
+              case "sub20":
+                this.sub(20)
+                this.newrequest();
+                break;
+                case "add50":
+                  this.add(50)
+                  this.newrequest();
+                  break;
+                  case "sub50":
+                    this.sub(50)
+                    this.newrequest();
+                    break;
+                    case "add100":
+                      this.add(100)
+                      this.newrequest();
+                      break;
+                      case "sub100":
+                        this.sub(100)
+                        this.newrequest();
+                        brea20
         default:
 
       }
@@ -89,13 +118,15 @@ class PeopleList extends React.Component {
 
     add(a){
 
-      this.setState({count:this.state.count+=a});
-      console.log("new state 20:"+ this.state.count)
+      this.setState({prevCount:this.state.count,
+                    count:this.state.count+=a});
+
 
     }
 
     sub(a){
-      this.setState({count:this.state.count-=a})
+      this.setState({prevCount:this.state.count,
+                      count:this.state.count-=a})
     }
 
     render() {
@@ -124,10 +155,18 @@ class PeopleList extends React.Component {
                             )
                 })}
                 <div id="command">
-                <button className="btn btn-dark" onClick={()=>this.newrequest()}>Reload</button>
-                <button className="btn btn-dark" onClick={()=>this.shoot("add")}>+10</button>
-                <button className="btn btn-dark" onClick={()=>this.shoot("sub")}>-10</button>
-                <PrevState count={count-10} />
+                <button className="btn btn-dark" onClick={()=>this.newrequest()}>Reload</button><br />
+                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("add1")}>+1</button>
+                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("sub1")}>-1</button><br />
+                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("add10")}>+10</button>
+                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("sub10")}>-10</button><br />
+                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("add20")}>+20</button>
+                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("sub20")}>-20</button><br />
+                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("add50")}>+50</button>
+                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("sub50")}>-50</button><br />
+                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("add100")}>+100</button>
+                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("sub100")}>-100</button>
+                <PrevState count={prevCount} />
                 <ActualState count={count} />
                 </div>
             </ul>

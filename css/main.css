@@ -14,7 +14,9 @@ h1{text-align: center;}
             margin:0 auto;
             margin-bottom: 2px;
             width: 300px;
+            transition-duration: 1s;
           }
+.people_all:hover{background-color:rgba(66,103,178,0.9);}
 
 .people_all p{text-align: center;margin: 0;
               line-height: 18px}
@@ -43,3 +45,5 @@ ul .people_each {list-style-type: none;}
 .btn{margin:1px;}
 
 .badge{margin:1px;}
+
+.btnValue{width: 60px;}
