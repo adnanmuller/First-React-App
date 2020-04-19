@@ -103,7 +103,7 @@ class PeopleList extends React.Component {
         const { data, loading, loaded } = this.state
         return (loading) ?
             <div>Loading...</div> :
-            <ol className="people-list">
+            <ul className="people-list">
                 {data.map((person, i) => {
                     const {first, last} = person.name
                     const {thumbnail}=person.picture
@@ -113,10 +113,14 @@ class PeopleList extends React.Component {
                     const {number,name}=person.location.street
                     return (
                             <div className="people_all">  <li className="people_each" key={i} >
-                          <p> {first} {last} {age} Years old {gender}</p>
-                          <p><span>Address: {number} {name}</span><br />
-                          <span> {postcode} {city} {country}</span></p>
-                          </li><img src={thumbnail} /></div>
+                            <img className="profileIMG" src={thumbnail} />
+                          <div className="paraInfo"><h2 className="name"> {first} {last}</h2>
+                          <h3 className="ageGender"> {age} Years old {gender}</h3>
+                          <p>{number} {name}<br />
+                           {postcode} {city}<br/>
+                            {country}</p>
+                            </div>
+                          </li></div>
                             )
                 })}
                 <button onClick={()=>this.newrequest()}>Reload</button>
@@ -124,7 +128,7 @@ class PeopleList extends React.Component {
                 <button onClick={()=>this.shoot("sub")}>-10</button>
                 <PrevState count={count-10} />
                 <ActualState count={count} />
-            </ol>
+            </ul>
     }
   }
   ReactDOM.render(

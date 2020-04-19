@@ -3,6 +3,24 @@
             width: 300px;
           }
 
+          .people_all p{text-align: center;margin: 0;
+                        line-height: 18px}
+
 .badge1{margin-right: 2px;
         display: block;
         width: 200px;}
+
+
+.people_each p{margin:1px;
+               padding:5px 5px 0px 5px;
+               }
+
+ul .people_each {list-style-type: none;}
+
+.profileIMG{float: right;margin: 2px;}
+
+.paraInfo{width: 250px;padding: 5px}
+
+.name{text-align: center;font-size: 22px;}
+
+.ageGender{text-align: center;font-size: 18px;}
