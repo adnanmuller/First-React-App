@@ -73,7 +73,7 @@ class PeopleList extends React.Component {
                     const {thumbnail}=person.picture
                     const {age}=person.dob
                     return (
-                            <div>  <li key={i} className="people">{first} {last} {age} Years old</li><img src={thumbnail} /></div>
+                            <div className="people_all">  <li className="people_each" key={i} className="people">{first} {last} {age} Years old</li><img src={thumbnail} /></div>
                             )
                 })}
                 <button onClick={()=>this.shoot(count)}>Print New List</button><br/>
