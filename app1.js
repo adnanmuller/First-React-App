@@ -13,7 +13,7 @@ class Header extends React.Component {
   }
 }
 
-ReactDOM.render(<Header favcol="yellow"/>, document.getElementById('root1'));
+//ReactDOM.render(<Header favcol="yellow"/>, document.getElementById('root1'));
 
 class PeopleList extends React.Component {
 
