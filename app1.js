@@ -143,7 +143,7 @@ class PeopleList extends React.Component {
                     const {city, postcode, state,country}=person.location
                     const {number,name}=person.location.street
                     return (
-                            <div className="people_all">  <li className="people_each" key={i} >
+                            <div className="people_all"><a class="peopleAncestor" href="" onClick="">  <li className="people_each" key={i} >
                             <img className="profileIMG" src={thumbnail} />
                           <div className="paraInfo"><h2 className="name"> {first} {last}</h2>
                           <h3 className="ageGender"> {age} Years old {gender}</h3>
@@ -151,7 +151,7 @@ class PeopleList extends React.Component {
                            {postcode} {city}<br/>
                             {country}</p>
                             </div>
-                          </li></div>
+                          </li></a></div>
                             )
                 })}
                 <div id="command">

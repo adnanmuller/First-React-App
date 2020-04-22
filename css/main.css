@@ -15,11 +15,22 @@ h1{text-align: center;}
             margin-bottom: 2px;
             width: 300px;
             transition-duration: 1s;
+
           }
 .people_all:hover{background-color:rgba(66,103,178,0.9);}
 
 .people_all p{text-align: center;margin: 0;
               line-height: 18px}
+
+.peopleAncestor {
+  color: black;
+  text-decoration: none; /* no underline */
+}
+
+.peopleAncestor:hover{
+  text-decoration: none;
+  color: black;
+}
 
 .PeopleList{ margin:0 auto;padding: 0;}
 
