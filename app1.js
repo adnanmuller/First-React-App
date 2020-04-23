@@ -24,7 +24,8 @@ class PeopleList extends React.Component {
             loaded: false,
             loading: false,
             count:10,
-            prevCount:0
+            prevCount:0,
+            cards:0
 
 
         }
@@ -40,6 +41,8 @@ class PeopleList extends React.Component {
 
 
     componentWillMount() {
+      ReactDOM.render(<Controller />,document.getElementById("controller"));
+      ReactDOM.render(<ControllerInfo count={this.state.count} prevCount={this.state.prevCount} />,document.getElementById("controllerInfo"));
       this.setState({loading:true})
       fetch('https://randomuser.me/api/?results=10')
           .then(response => response.json())
@@ -51,6 +54,10 @@ class PeopleList extends React.Component {
                 data
             }))
     };
+
+    componentDidUpdate() {
+      ReactDOM.render(<ControllerInfo count={this.state.count} prevCount={this.state.prevCount} />,document.getElementById("controllerInfo"));
+ }
 
 
 
@@ -139,6 +146,8 @@ class PeopleList extends React.Component {
         )
     }
 
+
+
     render() {
       const{count, prevCount}=this.state
         const { data, loading, loaded } = this.state
@@ -166,25 +175,11 @@ class PeopleList extends React.Component {
                           </li></a></div>
                             )
                 })}
-                <div id="command">
-                <button className="btn btn-dark" onClick={()=>this.newrequest()}>Reload</button><br />
-                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("add1")}>+1</button>
-                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("sub1")}>-1</button><br />
-                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("add10")}>+10</button>
-                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("sub10")}>-10</button><br />
-                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("add20")}>+20</button>
-                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("sub20")}>-20</button><br />
-                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("add50")}>+50</button>
-                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("sub50")}>-50</button><br />
-                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("add100")}>+100</button>
-                <button className="btn btn-dark btnValue" onClick={()=>this.shoot("sub100")}>-100</button>
-                <PrevState count={prevCount} />
-                <ActualState count={count} />
-                </div>
+
             </ul>
     }
   }
-  ReactDOM.render(
+const RenderPeople= ReactDOM.render(
     <PeopleList />,
     document.getElementById('root2')
   )
@@ -203,7 +198,7 @@ class PeopleList extends React.Component {
   }
 
 function PersonCard(props){
-  console.log("props"+props)
+
     return(
       <div className="people_card">
       <img className="profileIMG" src={props.info[11]} />
@@ -218,5 +213,31 @@ function PersonCard(props){
       </p></div>
     </div>
     )
+}
 
+function Controller(props){
+    return(
+      <div>
+      <button className="btn btn-dark" onClick={()=>RenderPeople.newrequest()}>Reload</button><br />
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add1")}>+1</button>
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub1")}>-1</button><br />
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add10")}>+10</button>
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub10")}>-10</button><br />
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add20")}>+20</button>
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub20")}>-20</button><br />
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add50")}>+50</button>
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub50")}>-50</button><br />
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add100")}>+100</button>
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub100")}>-100</button>
+      </div>
+    )
+}
+
+function ControllerInfo(props){
+  return(
+    <div>
+    <PrevState count={props.prevCount} />
+    <ActualState count={props.count} />
+    </div>
+  )
 }
