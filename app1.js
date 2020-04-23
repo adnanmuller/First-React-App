@@ -143,7 +143,7 @@ class PeopleList extends React.Component {
       const{count, prevCount}=this.state
         const { data, loading, loaded } = this.state
         return (loading) ?
-            <div>Loading...</div> :
+            <img id="loading" src="/img/loading2.gif" />  :
             <ul className="people-list">
                 {data.map((person, i) => {
                     const {first, last} = person.name

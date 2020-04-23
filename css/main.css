@@ -33,6 +33,12 @@ h1 {
   background-color: rgba(66, 103, 178, 0.9);
 }
 
+#loading{width: 250px;
+    margin: 20px 75px 300px 75px;
+}
+
+#command{position: fixed;top:151px;left:150px;}
+
 .people_all p {
   text-align: center;
   margin: 0;
