@@ -64,6 +64,7 @@ class PeopleList extends React.Component {
 
 
   newrequest(){
+    document.getElementById('controllerWarning').innerHTML="";
     this.setState({loading:true})
     fetch('https://randomuser.me/api/?results='+this.state.count)
         .then(response => response.json())
@@ -80,61 +81,58 @@ class PeopleList extends React.Component {
       switch (flag) {
         case "add1":
           this.add(1)
-          this.newrequest();
           break;
           case "sub1":
             this.sub(1)
-            this.newrequest();
             break;
         case "add10":
           this.add(10)
-          this.newrequest();
           break;
           case "sub10":
             this.sub(10)
-            this.newrequest();
             break;
             case "add20":
               this.add(20)
-              this.newrequest();
               break;
               case "sub20":
                 this.sub(20)
-                this.newrequest();
                 break;
                 case "add50":
                   this.add(50)
-                  this.newrequest();
                   break;
                   case "sub50":
                     this.sub(50)
-                    this.newrequest();
                     break;
                     case "add100":
                       this.add(100)
-                      this.newrequest();
                       break;
                       case "sub100":
                         this.sub(100)
-                        this.newrequest();
-                        brea20
-        default:
+                        break;
+                            default:
 
       }
 
     }
 
     add(a){
-
+      document.getElementById('controllerWarning').innerHTML="";
       this.setState({prevCount:this.state.count,
                     count:this.state.count+=a});
-
+      this.newrequest();
 
     }
 
     sub(a){
-      this.setState({prevCount:this.state.count,
-                      count:this.state.count-=a})
+      if(a>this.state.count){
+        console.log("Number to Substract is to high!");
+        document.getElementById('controllerWarning').innerHTML="Number "+a+" is to high!";
+      }else{
+        this.setState({prevCount:this.state.count,
+                        count:this.state.count-=a})
+        this.newrequest();
+      }
+
     }
 
     addCardRight(person,e){
@@ -217,18 +215,18 @@ function PersonCard(props){
 
 function Controller(props){
     return(
-      <div>
-      <button className="btn btn-dark" onClick={()=>RenderPeople.newrequest()}>Reload</button><br />
-      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add1")}>+1</button>
-      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub1")}>-1</button><br />
-      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add10")}>+10</button>
-      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub10")}>-10</button><br />
-      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add20")}>+20</button>
-      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub20")}>-20</button><br />
-      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add50")}>+50</button>
-      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub50")}>-50</button><br />
-      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add100")}>+100</button>
-      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub100")}>-100</button>
+      <div className="text-center">
+      <button className="btn btn-dark" id="reloadButton" onClick={()=>RenderPeople.newrequest()}>Reload</button><br />
+      <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add1")}>+1</button>
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub1")}>-1</button></div>
+      <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add10")}>+10</button>
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub10")}>-10</button></div>
+      <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add20")}>+20</button>
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub20")}>-20</button></div>
+      <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add50")}>+50</button>
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub50")}>-50</button></div>
+      <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add100")}>+100</button>
+      <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub100")}>-100</button></div>
       </div>
     )
 }

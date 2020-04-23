@@ -38,7 +38,9 @@ h1 {
     margin: 20px 75px 300px 75px;
 }
 
-#command{position: fixed;top:151px;left:150px;}
+#command{position: fixed;top:151px;left:150px;width: 140px;}
+
+#controllerWarning{width: 100%;position: relative;top: -4px;}
 
 .people_all p {
   text-align: center;
@@ -65,7 +67,7 @@ h1 {
 .badge1 {
   margin-right: 2px;
   display: block;
-  width: 200px;
+  width: 100%;
 }
 
 .people_each p {
@@ -116,3 +118,7 @@ ul .people_each {
   top: 151px;
   right: 40px;
 }
+
+/*.centerButton button{margin-left: 6.6px;}*/
+
+#reloadButton{text-align: center;}
