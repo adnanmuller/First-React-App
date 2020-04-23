@@ -163,6 +163,7 @@ class PeopleList extends React.Component {
                     return (
                             <div className="people_all"><a class="peopleAncestor" href="" onClick={(e)=>this.addCardRight(infoAll,e)}>
                             <li className="people_each" key={i} >
+                            <span class="badge badge-secondary">{++i}</span>
                             <img className="profileIMG" src={thumbnail} />
                           <div className="paraInfo"><h2 className="name"> {first} {last}</h2>
                           <h3 className="ageGender"> {age} Years old {gender}</h3>
