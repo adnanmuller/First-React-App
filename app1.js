@@ -31,6 +31,7 @@ class PeopleList extends React.Component {
         this.shoot=this.shoot.bind(this);
         this.add=this.add.bind(this);
         this.sub=this.sub.bind(this);
+        this.addCardRight=this.addCardRight.bind(this);
 
 
     }
@@ -129,6 +130,15 @@ class PeopleList extends React.Component {
                       count:this.state.count-=a})
     }
 
+    addCardRight(person,e){
+        e.preventDefault();
+        console.log(person);
+        ReactDOM.render(
+          <PersonCard info={person} />,
+          document.getElementById('card')
+        )
+    }
+
     render() {
       const{count, prevCount}=this.state
         const { data, loading, loaded } = this.state
@@ -137,13 +147,15 @@ class PeopleList extends React.Component {
             <ul className="people-list">
                 {data.map((person, i) => {
                     const {first, last} = person.name
-                    const {thumbnail}=person.picture
+                    const {thumbnail, large}=person.picture
                     const {age}=person.dob
-                    const {gender}=person
+                    const {gender,email,cell,nat}=person
                     const {city, postcode, state,country}=person.location
                     const {number,name}=person.location.street
+                    const infoAll=[first,last,thumbnail,age,gender,city,postcode,state,country,number,name,large,email,cell,nat];
                     return (
-                            <div className="people_all"><a class="peopleAncestor" href="" onClick="">  <li className="people_each" key={i} >
+                            <div className="people_all"><a class="peopleAncestor" href="" onClick={(e)=>this.addCardRight(infoAll,e)}>
+                            <li className="people_each" key={i} >
                             <img className="profileIMG" src={thumbnail} />
                           <div className="paraInfo"><h2 className="name"> {first} {last}</h2>
                           <h3 className="ageGender"> {age} Years old {gender}</h3>
@@ -189,3 +201,22 @@ class PeopleList extends React.Component {
       <span className="badge badge-info badge1">Actual people:<span>{props.count}</span></span>
     )
   }
+
+function PersonCard(props){
+  console.log("props"+props)
+    return(
+      <div className="people_card">
+      <img className="profileIMG" src={props.info[11]} />
+    <div className="paraInfo"><h2 className="name"> {props.info[0]} {props.info[1]}</h2>
+    <h3 className="ageGender"> {props.info[3]} Years old {props.info[4]}</h3>
+    <p>{props.info[9]} {props.info[10]}<br />
+     {props.info[6]} {props.info[5]}<br/>
+      {props.info[8]}<br/>
+    email:  {props.info[12]}<br/>
+    phone:  {props.info[13]}<br/>
+    nationality: {props.info[14]}<br/>
+      </p></div>
+    </div>
+    )
+
+}
