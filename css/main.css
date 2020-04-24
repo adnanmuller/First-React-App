@@ -45,17 +45,22 @@ h1 {
   top: 151px;
   left: 300px;
   width: 150px;
-  min-height: 320px;
+  /*min-height: 380px;*/
   border: solid grey 2px;
   padding: 5px;
   border-radius: 5px;
-  background-color: rgba(108,117,125,0.6)
+  background-color: rgba(108,117,125,0.6);
+
 }
+
+#controller{position: relative;}
+
+#minimize{position: absolute;top: 2px;right: 2px;}
 
 #controllerWarning {
   width: 100%;
   position: relative;
-  top: -4px;
+  top: -3px;
 }
 
 .people_all p {
@@ -137,5 +142,7 @@ ul .people_each {
 
 /*.centerButton button{margin-left: 6.6px;}*/
 #reloadButton {
-  text-align: center;
+  text-align: center;margin-top: 50px;
 }
+
+#controllerInfo{margin-top: 50px;}

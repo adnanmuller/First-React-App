@@ -217,6 +217,8 @@ function PersonCard(props){
 function Controller(props){
     return(
       <div className="text-center">
+      <button  type="button" data-toggle="collapse" data-target="#demo" class="btn btn-dark" id="minimize">-</button>
+      <div id="demo" class="collapse show">
       <button className="btn btn-dark" id="reloadButton" onClick={()=>RenderPeople.newrequest()}>Reload</button><br />
       <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add1")}>+1</button>
       <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub1")}>-1</button></div>
@@ -228,6 +230,9 @@ function Controller(props){
       <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub50")}>-50</button></div>
       <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add100")}>+100</button>
       <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub100")}>-100</button></div>
+      </div>
+
+
       </div>
     )
 }
