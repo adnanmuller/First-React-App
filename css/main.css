@@ -35,13 +35,28 @@ h1 {
   background-color: rgba(66, 103, 178, 0.9);
 }
 
-#loading{width: 250px;
-    margin: 20px 75px 300px 75px;
+#loading {
+  width: 250px;
+  margin: 20px 75px 300px 75px;
 }
 
-#command{position: fixed;top:151px;left:150px;width: 140px;}
+#command {
+  position: fixed;
+  top: 151px;
+  left: 300px;
+  width: 150px;
+  min-height: 320px;
+  border: solid grey 2px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(108,117,125,0.6)
+}
 
-#controllerWarning{width: 100%;position: relative;top: -4px;}
+#controllerWarning {
+  width: 100%;
+  position: relative;
+  top: -4px;
+}
 
 .people_all p {
   text-align: center;
@@ -115,11 +130,12 @@ ul .people_each {
 .people_card {
   background-color: rgba(66, 110, 178, 0.7);
   width: 30%;
-  position:fixed;
+  position: fixed;
   top: 151px;
   right: 40px;
 }
 
 /*.centerButton button{margin-left: 6.6px;}*/
-
-#reloadButton{text-align: center;}
+#reloadButton {
+  text-align: center;
+}
