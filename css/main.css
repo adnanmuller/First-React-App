@@ -53,6 +53,18 @@ h1 {
 
 }
 
+@media only screen and (max-width: 1250px) {
+#command{left:250px;}
+}
+
+@media only screen and (max-width: 1150px) {
+#command{left:150px;}
+}
+
+@media only screen and (max-width: 1000px) {
+#command{left:10px;}
+}
+
 #controller{position: relative;}
 
 #minimize{position: absolute;top: 2px;right: 2px;}
