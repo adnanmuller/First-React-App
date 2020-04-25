@@ -66,7 +66,7 @@ class PeopleList extends React.Component {
   newrequest(){
     document.getElementById('controllerWarning').innerHTML="";
     this.setState({loading:true})
-    fetch('https://randomuser.me/api/?results='+this.state.count)
+    fetch('https://randomuser.me/api/?results='+this.state.count+"&nat=gb")
         .then(response => response.json())
         .then(obj => obj.results)
         .then(data => this.setState({
@@ -215,8 +215,10 @@ function PersonCard(props){
 }
 
 function Controller(props){
+  let Nation=["RANDOM","AU", "BR", "CA", "CH", "DE", "DK", "ES", "FI", "FR", "GB", "IE", "IR", "NO", "NL", "NZ", "TR", "US"];
+  let Gender=["Random","male","female"];
     return(
-      <div className="text-center">
+    <div className="text-center">
       <button  type="button" data-toggle="collapse" data-target="#demo" class="btn btn-dark" id="minimize">-</button>
       <div id="demo" class="collapse show">
       <button className="btn btn-dark" id="reloadButton" onClick={()=>RenderPeople.newrequest()}>Reload</button><br />
@@ -230,7 +232,21 @@ function Controller(props){
       <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub50")}>-50</button></div>
       <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add100")}>+100</button>
       <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub100")}>-100</button></div>
+      <div class="form-group selector">
+        <label for="sel1" className="labelEach">Select Nationality</label>
+          <select class="form-control selectorEach" id="sel1">
+          {Nation.map((nat,i)=>(<option key={i}>{nat}</option>))
+          }}
+          </select>
       </div>
+      <div class="form-group selector">
+        <label for="sel1"  className="labelEach">Select Gender</label>
+          <select class="form-control selectorEach" id="sel1">
+          {Gender.map((gend,i)=>(<option key={i}>{gend}</option>))
+          }}
+          </select>
+      </div>
+    </div>
 
 
       </div>
