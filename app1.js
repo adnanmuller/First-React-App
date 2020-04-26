@@ -27,7 +27,9 @@ class PeopleList extends React.Component {
             prevCount:0,
             cards:0,
             gender:"",
-            nation:""
+            nation:"",
+            female:0,
+            male:0
 
 
         }
@@ -60,6 +62,11 @@ class PeopleList extends React.Component {
 
     componentDidUpdate() {
       ReactDOM.render(<ControllerInfo count={this.state.count} prevCount={this.state.prevCount} />,document.getElementById("controllerInfo"));
+      /*if(this.state.data.map((data,i)=>{return data.gender=="male"})){
+        this.setState({male:this.state.male+=1});
+      }else if(this.state.data.map((data,i)=>{return data.gender=="female"})){
+        this.setState({female:this.state.female+=1});
+      }*/
  }
 
 
@@ -182,23 +189,29 @@ class PeopleList extends React.Component {
                     const {number,name}=person.location.street
                     const infoAll=[first,last,thumbnail,age,gender,city,postcode,state,country,number,name,large,email,cell,nat];
                     return (
-                            <div className="people_all"><a class="peopleAncestor" href="" onClick={(e)=>this.addCardRight(infoAll,e)}>
+                            <div className="people_all" ><a className="peopleAncestor" href="" onClick={(e)=>this.addCardRight(infoAll,e)}>
                             <li className="people_each" key={i} >
-                            <span class="badge badge-secondary">{++i}</span>
+                            <span class="badge badge-secondary">{i+1}</span>
                             <img className="profileIMG" src={thumbnail} />
                           <div className="paraInfo"><h2 className="name"> {first} {last}</h2>
                           <h3 className="ageGender"> {age} Years old {gender}</h3>
+                          <div id={"a"+i} className="collapse">
                           <p>{number} {name}<br />
                            {postcode} {city}<br/>
                             {country}</p>
-                            </div>
-                          </li></a></div>
+                            </div></div>
+
+                          </li></a><img src="/img/biger2.png" href={"#a"+i} data-toggle="collapse" className="minimizer" />
+
+                          </div>
                             )
                 })}
-
+                
             </ul>
     }
   }
+
+
 const RenderPeople= ReactDOM.render(
     <PeopleList />,
     document.getElementById('root2')
