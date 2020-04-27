@@ -145,11 +145,11 @@ class PeopleList extends React.Component {
 
     }
 
-    addCardRight(person,e){
+    addCardRight(info,e){
         e.preventDefault();
-        console.log(person);
+        console.log(info);
         ReactDOM.render(
-          <PersonCard info={person} />,
+          <PersonCard info={{info}} />,
           document.getElementById('card')
         )
     }
@@ -201,12 +201,13 @@ class PeopleList extends React.Component {
                             {country}</p>
                             </div></div>
 
-                          </li></a><img src="/img/biger2.png" href={"#a"+i} data-toggle="collapse" className="minimizer" />
+                          </li></a>
+                            <img src="/img/biger2.png" href={"#a"+i} data-toggle="collapse" className="minimizer"  />
 
                           </div>
                             )
                 })}
-                
+
             </ul>
     }
   }
@@ -230,23 +231,42 @@ const RenderPeople= ReactDOM.render(
     )
   }
 
-function PersonCard(props){
+class PersonCard extends React.Component{
+  constructor(props){
+    super(props);
+      this.state={person:[]}
 
-    return(
-      <div className="people_card">
-      <img className="profileIMG" src={props.info[11]} />
-    <div className="paraInfo"><h2 className="name"> {props.info[0]} {props.info[1]}</h2>
-    <h3 className="ageGender"> {props.info[3]} Years old {props.info[4]}</h3>
-    <p>{props.info[9]} {props.info[10]}<br />
-     {props.info[6]} {props.info[5]}<br/>
-      {props.info[8]}<br/>
-    email:  {props.info[12]}<br/>
-    phone:  {props.info[13]}<br/>
-    nationality: {props.info[14]}<br/>
-      </p></div>
-    </div>
-    )
-};
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    return {person:state.person.concat(props.info) };
+
+  }
+
+render(){
+
+  return(<div className="people_card">
+    {this.state.person.map((person, i) => {
+          console.log("array map nr: "+i+person);
+      return(<div className="peole_card_each" >
+              <img className="profileIMG" src={person.info[11]} />
+              <div className="paraInfo"><h2 className="name"> {person.info[0]} {person.info[1]}</h2>
+                <h3 className="ageGender"> {person.info[3]} Years old {person.info[4]}</h3>
+                <p>{person.info[9]} {person.info[10]}<br />
+                {person.info[6]} {person.info[5]}<br/>
+                {person.info[8]}<br/>
+                email:  {person.info[12]}<br/>
+                phone:  {person.info[13]}<br/>
+                nationality: {person.info[14]}<br/>
+    </p></div>
+
+  </div>
+  )})
+
+}
+
+</div>)
+}};
 
 
 

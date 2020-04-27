@@ -154,10 +154,10 @@ ul .people_each {
 }
 
 .people_card {
-  background-color: rgba(66, 110, 178, 0.7);
+
   width: 30%;
-  position: fixed;
-  top: 151px;
+  position: absolute;
+  top: 113px;
   right: 40px;
 }
 
@@ -168,4 +168,6 @@ ul .people_each {
 
 #controllerInfo{margin-top: 50px;}
 
-.minimizer{background-color: rgba(0,0,0,0);width: 18px;position: absolute;top:3px;left: 22px;}
+.minimizer{background-color: rgba(0,0,0,0);width: 18px;position: absolute;top:52px;right: 3px;}
+
+.peole_card_each{margin-bottom: 5px;background-color: rgba(66, 110, 178, 0.7);}
