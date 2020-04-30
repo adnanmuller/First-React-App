@@ -45,7 +45,7 @@ h1 {
 
 #command {
   position: fixed;
-  top: 73px;
+  top: 109px;
   left: 300px;
   width: 150px;
   /*min-height: 380px;*/
@@ -170,4 +170,8 @@ ul .people_each {
 
 .minimizer{background-color: rgba(0,0,0,0);width: 18px;position: absolute;top:52px;right: 3px;}
 
-.peole_card_each{margin-bottom: 5px;background-color: rgba(66, 110, 178, 0.7);}
+.peole_card_each{margin-bottom: 5px;background-color: rgba(66, 110, 178, 0.7);position: relative;}
+
+.binPersonCard{position: absolute;
+               right: 3px;
+               top: 130px;}

@@ -250,6 +250,7 @@ render(){
           console.log("array map nr: "+i+person);
       return(<div className="peole_card_each" >
               <img className="profileIMG" src={person.info[11]} />
+              <img src="img/bin.png" className="binPersonCard" alt="bin" />
               <div className="paraInfo"><h2 className="name"> {person.info[0]} {person.info[1]}</h2>
                 <h3 className="ageGender"> {person.info[3]} Years old {person.info[4]}</h3>
                 <p>{person.info[9]} {person.info[10]}<br />
@@ -258,9 +259,12 @@ render(){
                 email:  {person.info[12]}<br/>
                 phone:  {person.info[13]}<br/>
                 nationality: {person.info[14]}<br/>
-    </p></div>
+                </p>
 
-  </div>
+              </div>
+
+
+            </div>
   )})
 
 }
