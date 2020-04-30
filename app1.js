@@ -187,7 +187,8 @@ class PeopleList extends React.Component {
                     const {gender,email,cell,nat}=person
                     const {city, postcode, state,country}=person.location
                     const {number,name}=person.location.street
-                    const infoAll=[first,last,thumbnail,age,gender,city,postcode,state,country,number,name,large,email,cell,nat];
+                    const {md5}=person.login;
+                    const infoAll=[first,last,thumbnail,age,gender,city,postcode,state,country,number,name,large,email,cell,nat,md5];
                     return (
                             <div className="people_all" ><a className="peopleAncestor" href="" onClick={(e)=>this.addCardRight(infoAll,e)}>
                             <li className="people_each" key={i} >
@@ -236,11 +237,29 @@ class PersonCard extends React.Component{
     super(props);
       this.state={person:[]}
 
+      this.removeCard=this.removeCard.bind(this);
+
   }
 
-  static getDerivedStateFromProps(props, state) {
+  /*static getDerivedStateFromProps(props, state) {
     return {person:state.person.concat(props.info) };
 
+  }*/
+
+  componentWillReceiveProps(nextProps) {
+     // Any time props.email changes, update state.
+
+       this.setState({
+         person:this.state.person.concat(nextProps.info)
+       });
+       }
+
+  removeCard(code){
+      console.log("object for removeCard"+ this.state.person);
+      console.log(code);
+      let NewArrayPerson=this.state.person.filter((person,i)=>person.info[15]!=code);
+      console.log("new person Array= "+NewArrayPerson);
+      this.setState({person:NewArrayPerson})
   }
 
 render(){
@@ -250,7 +269,7 @@ render(){
           console.log("array map nr: "+i+person);
       return(<div className="peole_card_each" >
               <img className="profileIMG" src={person.info[11]} />
-              <img src="img/bin.png" className="binPersonCard" alt="bin" />
+              <img src="img/bin.png" className="binPersonCard" alt="bin" onClick={()=>this.removeCard(person.info[15])}/>
               <div className="paraInfo"><h2 className="name"> {person.info[0]} {person.info[1]}</h2>
                 <h3 className="ageGender"> {person.info[3]} Years old {person.info[4]}</h3>
                 <p>{person.info[9]} {person.info[10]}<br />
