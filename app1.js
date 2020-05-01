@@ -249,10 +249,21 @@ class PersonCard extends React.Component{
   componentWillReceiveProps(nextProps) {
      // Any time props.email changes, update state.
 
-       this.setState({
-         person:this.state.person.concat(nextProps.info)
-       });
-       }
+        this.setState({
+          person:this.state.person.concat(nextProps.info)
+        });
+      }
+
+  componentDidMount(){
+    const screenHeight=window.screen.availHeight;
+    const screenDiff=screenHeight-250;
+    if(document.getElementById("dynamicHeight")){
+        document.getElementById("dynamicHeight").style.setProperty("height",screenDiff+"px");
+
+    }else{
+      return;
+    }
+  }
 
   removeCard(code){
       console.log("object for removeCard"+ this.state.person);
@@ -264,7 +275,7 @@ class PersonCard extends React.Component{
 
 render(){
 
-  return(<div className="people_card">
+  return(<div className="people_card" id="dynamicHeight">
     {this.state.person.map((person, i) => {
           console.log("array map nr: "+i+person);
       return(<div className="peole_card_each" >
