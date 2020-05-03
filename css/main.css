@@ -206,4 +206,6 @@ ul .people_each {
                  background: #555;
                }
 
-#card{}
+#header{position: fixed;display: block;width: 100%;}
+
+#title{padding-top: 55px;}
