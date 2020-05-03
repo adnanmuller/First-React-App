@@ -2,7 +2,7 @@ body {
   width: 100%;
   background-image: url("/img/world.jpg");
   background-repeat: no-repeat;
-  background-position: 50% 10%;
+  background-position: 50% 60%;
   background-attachment: fixed;
 }
 
@@ -206,6 +206,8 @@ ul .people_each {
                  background: #555;
                }
 
-#header{position: fixed;display: block;width: 100%;}
+#header{position: fixed;display: block;width: 100%;z-index: 100;}
 
 #title{padding-top: 55px;}
+
+.mainTitle{position: sticky;top: 5px;z-index: 90;background-color: white;}
