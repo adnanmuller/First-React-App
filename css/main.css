@@ -40,7 +40,8 @@ h1 {
 
 #loading {
   width: 250px;
-  margin: 20px 75px 300px 75px;
+  margin: 20px auto 300px auto;
+  display: block;
 }
 
 #command {

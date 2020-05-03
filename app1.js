@@ -179,6 +179,7 @@ class PeopleList extends React.Component {
         const { data, loading, loaded } = this.state
         return (loading) ?
             <img id="loading" src="/img/loading2.gif" />  :
+
             <ul className="people-list">
                 {data.map((person, i) => {
                     const {first, last} = person.name
