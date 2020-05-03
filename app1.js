@@ -393,9 +393,9 @@ class Navigation extends React.Component{
               HOME
             </a>
             <div className="dropdown-menu">
-              <a className="dropdown-item" href="#">Link 1</a>
-              <a className="dropdown-item" href="#">Link 2</a>
-              <a className="dropdown-item" href="#">Link 3</a>
+              <a className="dropdown-item" href="#">Link </a>
+              <a className="dropdown-item" href="#">Link </a>
+              <a className="dropdown-item" href="#">Link </a>
             </div>
           </li>
         </ul>
