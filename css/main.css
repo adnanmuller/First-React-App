@@ -209,3 +209,9 @@ ul .people_each {
 #header{position: fixed;display: block;width: 100%;}
 
 #title{padding-top: 55px;}
+
+.loginNav label{color: rgba(255,255,255,.5);margin-right: 5px;}
+
+#passwordInput, #userInput{width: 150px;margin-right: 5px;}
+
+#labelForm img{height: 36px;}
