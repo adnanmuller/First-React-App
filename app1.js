@@ -400,6 +400,16 @@ class Navigation extends React.Component{
             </div>
           </li>
         </ul>
+
+        <form className="form-inline ml-auto loginNav" id="loginNav" action="/action_page.php">
+        <label for="userInput" id="labelForm"><img src="img/user3.png"  /></label>
+   <input type="text" className="form-control" id="userInput" placeholder="User Name" name="email" />
+   <input type="password" className="form-control" id="passwordInput" placeholder="password" name="pswd" />
+   <div className="form-check">
+   </div>
+   <button type="submit" className="btn btn-primary">Log in</button>
+ </form>
+
       </nav>
     )
 

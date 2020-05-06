@@ -210,4 +210,19 @@ ul .people_each {
 
 #title{padding-top: 55px;}
 
+
 .mainTitle{position: sticky;top: 5px;z-index: 90;background-color: white;}
+
+
+
+
+
+
+
+
+
+.loginNav label{color: rgba(255,255,255,.5);margin-right: 5px;}
+
+#passwordInput, #userInput{width: 150px;margin-right: 5px;}
+
+#labelForm img{height: 36px;}
