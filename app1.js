@@ -178,7 +178,7 @@ class PeopleList extends React.Component {
       const{count, prevCount}=this.state
         const { data, loading, loaded } = this.state
         return (loading) ?
-            <img id="loading" src="/img/loading2.gif" />  :
+            <img id="loading" src="img/loading2.gif" />  :
 
             <ul className="people-list">
                 {data.map((person, i) => {
@@ -204,7 +204,7 @@ class PeopleList extends React.Component {
                             </div></div>
 
                           </li></a>
-                            <img src="/img/biger2.png" href={"#a"+i} data-toggle="collapse" className="minimizer"  />
+                            <img src="img/biger2.png" href={"#a"+i} data-toggle="collapse" className="minimizer"  />
 
                           </div>
                             )
@@ -401,7 +401,7 @@ class Navigation extends React.Component{
           </li>
         </ul>
 
-        <form className="form-inline ml-auto loginNav" id="loginNav" action="/login.php">
+        <form className="form-inline ml-auto loginNav" id="loginNav" action="login.php">
         <label for="userInput" id="labelForm"><img src="img/user3.png"  /></label>
    <input type="text" className="form-control" id="userInput" placeholder="User Name" name="email" />
    <input type="password" className="form-control" id="passwordInput" placeholder="password" name="pswd" />
