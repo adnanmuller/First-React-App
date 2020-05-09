@@ -1,6 +1,6 @@
 body {
   width: 100%;
-  background-image: url("/img/world.jpg");
+  background-image: url("http://localhost/react%20people%20app/img/world.jpg");
   background-repeat: no-repeat;
   background-position: 50% 60%;
   background-attachment: fixed;
@@ -213,7 +213,12 @@ ul .people_each {
 
 .mainTitle{position: sticky;top: 5px;z-index: 90;background-color: white;}
 
-.loginNav label{color: rgba(255,255,255,.5);margin-right: 5px;}
+#loginNav label{color: rgba(255,255,255,.5);margin-right: 5px;z-index: 150;
+    }
+    #loginNav{position: fixed;
+    top: 8px;
+    right: 8px;
+  z-index: 150;}
 
 #passwordInput, #userInput{width: 150px;margin-right: 5px;}
 

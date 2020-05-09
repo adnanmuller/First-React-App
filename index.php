@@ -33,6 +33,47 @@
 
   </header>
 
+  <?php echo
+'<form class="form-inline ml-auto " id="loginNav" action="login.php" method="post">
+<label for="userInput" id="labelForm"><img src="img/user3.png"></label>
+<input type="text" class="form-control" id="userInput" placeholder="User Name" name="name" />
+<input type="password" class="form-control" id="passwordInput" placeholder="password" name="pswd" />
+<div class="form-check">
+</div>
+<button type="submit" class="btn btn-primary">Log in</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</button>
+</form>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+<div class="modal-dialog">
+  <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Modal Heading</h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+      Modal body..
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+    </div>
+
+  </div>
+</div>
+</div>'
+
+
+  ?>
+
+
+
 <div class="wrapperMain">
 
 <div class="mainTitle">
