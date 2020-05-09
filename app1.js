@@ -401,7 +401,7 @@ class Navigation extends React.Component{
           </li>
         </ul>
 
-        <form className="form-inline ml-auto loginNav" id="loginNav" action="/action_page.php">
+        <form className="form-inline ml-auto loginNav" id="loginNav" action="/login.php">
         <label for="userInput" id="labelForm"><img src="img/user3.png"  /></label>
    <input type="text" className="form-control" id="userInput" placeholder="User Name" name="email" />
    <input type="password" className="form-control" id="passwordInput" placeholder="password" name="pswd" />
