@@ -42,10 +42,10 @@ session_start();
   echo'<form  id="loginNav" action="includes/logout.inc.php"  method="post">
   <button type="submit" name="submit" class="btn btn-primary">Logout</button></form>';
 }else{
-  echo '<form class="form-inline ml-auto " id="loginNav" action="includes/login.inc.php" method="post">
+  echo '<form class="form-inline ml-auto was-validated" id="loginNav" action="includes/login.inc.php" method="post">
   <label for="userInput" id="labelForm"><img src="img/user3.png"></label>
-  <input type="text" class="form-control" id="userInput" placeholder="User Name" name="uid" />
-  <input type="password" class="form-control" id="passwordInput" placeholder="password" name="pwd" />
+  <input type="text" class="form-control" id="userInput" placeholder="User Name" name="uid" required/>
+  <input type="password" class="form-control" id="passwordInput" placeholder="password" name="pwd" required />
   <button type="submit" class="btn btn-primary" name="submit">Log in</button>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</button>
   </form>';
