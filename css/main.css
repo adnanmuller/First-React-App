@@ -24,7 +24,7 @@ h1 {
 
 #root2 {
   /*border: solid grey 2px;*/
-  padding-top: 15px;
+  padding-top: 0px;
   margin-bottom: 50px;
   min-height: 900px;
 }
@@ -51,7 +51,7 @@ h1 {
 
 #command {
   position: fixed;
-  top: 167px;
+  top: 175px;
   left: 300px;
   width: 150px;
   /*min-height: 380px;*/
@@ -186,7 +186,7 @@ ul .people_each {
 .people_card {
   width: 30%;
   position: fixed;
-  top: 167px;
+  top: 175px;
   right: 40px;
   /*height: 600px;*/
 }
