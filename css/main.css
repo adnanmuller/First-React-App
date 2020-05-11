@@ -223,3 +223,5 @@ ul .people_each {
 #passwordInput, #userInput{width: 150px;margin-right: 5px;}
 
 #labelForm img{height: 36px;}
+
+.signupform input{display: block;width: 60%;margin-bottom: 2px;}

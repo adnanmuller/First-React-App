@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -33,16 +37,23 @@
 
   </header>
 
-  <?php echo
-'<form class="form-inline ml-auto " id="loginNav" action="login.php" method="post">
-<label for="userInput" id="labelForm"><img src="img/user3.png"></label>
-<input type="text" class="form-control" id="userInput" placeholder="User Name" name="name" />
-<input type="password" class="form-control" id="passwordInput" placeholder="password" name="pswd" />
-<div class="form-check">
-</div>
-<button type="submit" class="btn btn-primary">Log in</button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</button>
-</form>
+  <?php
+  if(isset($_SESSION['u_id'])){
+  echo'<form  id="loginNav" action="includes/logout.inc.php"  method="post">
+  <button type="submit" name="submit" class="btn btn-primary">Logout</button></form>';
+}else{
+  echo '<form class="form-inline ml-auto " id="loginNav" action="includes/login.inc.php" method="post">
+  <label for="userInput" id="labelForm"><img src="img/user3.png"></label>
+  <input type="text" class="form-control" id="userInput" placeholder="User Name" name="uid" />
+  <input type="password" class="form-control" id="passwordInput" placeholder="password" name="pwd" />
+  <div class="form-check">
+  </div>
+  <button type="submit" class="btn btn-primary" name="submit">Log in</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</button>
+  </form>';
+}
+
+?>
 
 <!-- The Modal -->
 <div class="modal" id="myModal">
@@ -51,13 +62,21 @@
 
     <!-- Modal Header -->
     <div class="modal-header">
-      <h4 class="modal-title">Modal Heading</h4>
+      <h4 class="modal-title">Signup</h4>
       <button type="button" class="close" data-dismiss="modal">&times;</button>
     </div>
 
     <!-- Modal body -->
     <div class="modal-body">
-      Modal body..
+    <form class="signupform" action="includes/signup.inc.php" method="post">
+      <input type="text" name="first" placeholder="Firstname">
+      <input type="text" name="last" placeholder="Lastname">
+      <input type="email" name="email" placeholder="E-mail">
+      <input type="text" name="uid" placeholder="Username">
+      <input type="password" name="pwd" placeholder="Password">
+      <button type="submit" name="submit" class="btn-primary">Sign up</button>
+      <button type="reset"  class="btn-primary">reset</button>
+    </form>
     </div>
 
     <!-- Modal footer -->
