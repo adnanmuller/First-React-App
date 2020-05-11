@@ -46,8 +46,6 @@ session_start();
   <label for="userInput" id="labelForm"><img src="img/user3.png"></label>
   <input type="text" class="form-control" id="userInput" placeholder="User Name" name="uid" />
   <input type="password" class="form-control" id="passwordInput" placeholder="password" name="pwd" />
-  <div class="form-check">
-  </div>
   <button type="submit" class="btn btn-primary" name="submit">Log in</button>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</button>
   </form>';
@@ -68,14 +66,16 @@ session_start();
 
     <!-- Modal body -->
     <div class="modal-body">
-    <form class="signupform" action="includes/signup.inc.php" method="post">
-      <input type="text" name="first" placeholder="Firstname">
-      <input type="text" name="last" placeholder="Lastname">
-      <input type="email" name="email" placeholder="E-mail">
-      <input type="text" name="uid" placeholder="Username">
-      <input type="password" name="pwd" placeholder="Password">
+    <form class="signupform was-validated"  action="includes/signup.inc.php" method="post">
+      <input type="text" name="first" placeholder="Firstname" required>
+      <input type="text" name="last" placeholder="Lastname" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="text" name="uid" placeholder="Username" required>
+      <input type="password" name="pwd" placeholder="Password" required>
+      <div id="registerButton"  >
       <button type="submit" name="submit" class="btn-primary">Sign up</button>
       <button type="reset"  class="btn-primary">reset</button>
+    </div>
     </form>
     </div>
 
