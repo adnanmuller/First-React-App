@@ -293,3 +293,10 @@ ul .people_each {
 }
 
 #registerButton{text-align: center;margin-top: 15px;}
+
+#navbarUserName {color:white;display: inline-block;}
+
+.accountInfoSpace{color:green;width: 200px;display: inline-block;}
+
+#wrongUserLogin{    color: red;
+    padding: 0 5px;}

@@ -8,6 +8,7 @@ session_start();
 <head>
   <meta charset="utf-8">
   <title>The People App</title>
+  <script  src="https://unpkg.com/axios@0.17/dist/axios.min.js"></script>
   <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
@@ -40,9 +41,13 @@ session_start();
   <?php
   if(isset($_SESSION['u_id'])){
   echo'<form  id="loginNav" action="includes/logout.inc.php"  method="post">
+  <p id="navbarUserName">Hallo '. $_SESSION[ "u_first" ].'</p>
+  <button type="button" name="info" class="btn btn-primary" data-toggle="modal" data-target="#myInfo">My account</button>
   <button type="submit" name="submit" class="btn btn-primary">Logout</button></form>';
 }else{
+
   echo '<form class="form-inline ml-auto was-validated" id="loginNav" action="includes/login.inc.php" method="post">
+  
   <label for="userInput" id="labelForm"><img src="img/user3.png"></label>
   <input type="text" class="form-control" id="userInput" placeholder="User Name" name="uid" required/>
   <input type="password" class="form-control" id="passwordInput" placeholder="password" name="pwd" required />
@@ -51,9 +56,10 @@ session_start();
   </form>';
 }
 
+
 ?>
 
-<!-- The Modal -->
+<!-- The Modal SIGNUP -->
 <div class="modal" id="myModal">
 <div class="modal-dialog">
   <div class="modal-content">
@@ -86,10 +92,35 @@ session_start();
 
   </div>
 </div>
-</div>'
+</div>
 
+<!-- The Modal MYINFO -->
+<div class="modal" id="myInfo">
+<div class="modal-dialog">
+  <div class="modal-content">
 
-  ?>
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">My Account</h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+
+    <div id="myInfoBody">
+
+    </div>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+    </div>
+
+  </div>
+</div>
+</div>
 
 
 
@@ -114,6 +145,7 @@ session_start();
   <div class="" id="controllerInfo"></div>
   <span class="badge badge-warning" id="controllerWarning"></span>
   </div>
+  <div id="infoUser"></div>
 
 </div>
 
