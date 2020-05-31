@@ -264,7 +264,7 @@ class PersonCard extends React.Component{
 
   componentDidMount(){
     const screenHeight=window.screen.availHeight;
-    const screenDiff=screenHeight-250;
+    const screenDiff=screenHeight-420;
     if(document.getElementById("dynamicHeight")){
         document.getElementById("dynamicHeight").style.setProperty("height",screenDiff+"px");
 
