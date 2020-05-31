@@ -10,7 +10,12 @@ h1 {
   text-align: center;
 }
 
-#myName{text-align: right;position: relative;top: -12px;font-family: cursive;}
+#myName {
+  text-align: right;
+  position: relative;
+  top: -12px;
+  font-family: cursive;
+}
 
 .wrapperMain {
   width: 30%;
@@ -19,7 +24,7 @@ h1 {
 
 #root2 {
   /*border: solid grey 2px;*/
-  padding-top: 15px;
+  padding-top: 0px;
   margin-bottom: 50px;
   min-height: 900px;
 }
@@ -46,36 +51,49 @@ h1 {
 
 #command {
   position: fixed;
-  top: 167px;
+  top: 175px;
   left: 300px;
   width: 150px;
   /*min-height: 380px;*/
   border: solid grey 2px;
   padding: 5px;
   border-radius: 5px;
-  background-color: rgba(108,117,125,0.6);
-
+  background-color: rgba(108, 117, 125, 0.6);
 }
 
 @media only screen and (max-width: 1250px) {
-#command{left:250px;}
+  #command {
+    left: 250px;
+  }
 }
 
 @media only screen and (max-width: 1150px) {
-#command{left:150px;}
+  #command {
+    left: 150px;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
-#command{left:10px;}
+  #command {
+    left: 10px;
+  }
 }
 
 @media only screen and (min-width: 1600px) {
-#command{left:450px;}
+  #command {
+    left: 450px;
+  }
 }
 
-#controller{position: relative;}
+#controller {
+  position: relative;
+}
 
-#minimize{position: absolute;top: 2px;right: 2px;}
+#minimize {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
 
 #controllerWarning {
   width: 100%;
@@ -83,11 +101,18 @@ h1 {
   top: -3px;
 }
 
-.selector{margin-top: 0px;margin-bottom: 0px;}
+.selector {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 
-.selectorEach{margin-bottom: 0px;}
+.selectorEach {
+  margin-bottom: 0px;
+}
 
-.labelEach{margin-bottom: 0;}
+.labelEach {
+  margin-bottom: 0;
+}
 
 .people_all p {
   text-align: center;
@@ -159,69 +184,119 @@ ul .people_each {
 }
 
 .people_card {
-
   width: 30%;
   position: fixed;
-  top: 167px;
+  top: 175px;
   right: 40px;
   /*height: 600px;*/
-
-
 }
 
-#dynamicHeight{height: 10px;  overflow-y: scroll;}
+#dynamicHeight {
+  height: 10px;
+  overflow-y: scroll;
+}
 
 /*.centerButton button{margin-left: 6.6px;}*/
 #reloadButton {
-  text-align: center;margin-top: 50px;
+  text-align: center;
+  margin-top: 50px;
 }
 
-#controllerInfo{margin-top: 50px;}
+#controllerInfo {
+  margin-top: 50px;
+}
 
-.minimizer{background-color: rgba(0,0,0,0);width: 18px;position: absolute;top:52px;right: 3px;}
+.minimizer {
+  background-color: rgba(0, 0, 0, 0);
+  width: 18px;
+  position: absolute;
+  top: 52px;
+  right: 3px;
+}
 
-.peole_card_each{margin-bottom: 5px;background-color: rgba(66, 110, 178, 0.7);position: relative;}
+.peole_card_each {
+  margin-bottom: 5px;
+  background-color: rgba(66, 110, 178, 0.7);
+  position: relative;
+}
 
-.binPersonCard{position: absolute;
-               right: 3px;
-               top: 130px;}
+.binPersonCard {
+  position: absolute;
+  right: 3px;
+  top: 130px;
+}
 
-               /* width */
-               ::-webkit-scrollbar {
-                 width: 10px;
-               }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-               /* Track */
-               ::-webkit-scrollbar-track {
-                 background: #f1f1f1;
-               }
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
-               /* Handle */
-               ::-webkit-scrollbar-thumb {
-                 background: #888;
-               }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
 
-               /* Handle on hover */
-               ::-webkit-scrollbar-thumb:hover {
-                 background: #555;
-               }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
-#header{position: fixed;display: block;width: 100%;z-index: 100;}
+#header {
+  position: fixed;
+  display: block;
+  width: 100%;
+  z-index: 100;
+}
 
-#title{padding-top: 55px;}
+#title {
+  padding-top: 55px;
+}
 
+.mainTitle {
+  position: sticky;
+  top: 5px;
+  z-index: 90;
+  background-color: white;
+}
 
-.mainTitle{position: sticky;top: 5px;z-index: 90;background-color: white;}
+#loginNav label {
+  color: rgba(255, 255, 255, .5);
+  margin-right: 5px;
+  z-index: 150;
+}
 
-#loginNav label{color: rgba(255,255,255,.5);margin-right: 5px;z-index: 150;
-    }
-    #loginNav{position: fixed;
-    top: 8px;
-    right: 8px;
-  z-index: 150;}
+#loginNav {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  z-index: 150;
+}
 
-#passwordInput, #userInput{width: 150px;margin-right: 5px;}
+#passwordInput, #userInput {
+  width: 150px;
+  margin-right: 5px;
+}
 
-#labelForm img{height: 36px;}
+#labelForm img {
+  height: 36px;
+}
 
-.signupform input{display: block;width: 60%;margin-bottom: 2px;}
+.signupform input {
+  display: block;
+  width: 60%;
+  margin: 0 auto 2px;
+}
+
+#registerButton{text-align: center;margin-top: 15px;}
+
+#navbarUserName {color:white;display: inline-block;}
+
+.accountInfoSpace{color:green;width: 200px;display: inline-block;}
+
+#wrongUserLogin{    color: red;
+    padding: 0 5px;}

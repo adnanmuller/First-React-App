@@ -42,6 +42,9 @@ if(isset($_POST[ 'uid' ] )& isset($_POST[ 'pwd' ])){
 					$_SESSION[ 'u_last' ] = $row[ 'user_last' ];
 					$_SESSION[ 'u_email' ] = $row[ 'user_email' ];
 					$_SESSION[ 'u_uid' ] = $row[ 'user_uid' ];
+				 $_SESSION['accountInfo']=$row ;
+					//echo json_encode($row);
+
 					header( 'Location: ../index.php?login=success' );
 					exit();
 				}
