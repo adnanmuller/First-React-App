@@ -256,10 +256,11 @@ class PersonCard extends React.Component{
 
   componentWillReceiveProps(nextProps) {
      // Any time props.email changes, update state.
-
+          this.state.person.reverse();
         this.setState({
-          person:this.state.person.concat(nextProps.info)
+          person:this.state.person.concat(nextProps.info).reverse()
         });
+        
       }
 
   componentDidMount(){
