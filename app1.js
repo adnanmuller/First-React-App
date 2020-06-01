@@ -32,6 +32,7 @@ class PeopleList extends React.Component {
             loading: false,
             count:10,
             prevCount:0,
+            increments:0,
             cards:0,
             gender:"",
             nation:"",
@@ -45,6 +46,7 @@ class PeopleList extends React.Component {
         this.sub=this.sub.bind(this);
         this.addCardRight=this.addCardRight.bind(this);
         this.updateGender=this.updateGender.bind(this);
+        this.newrequest=this.newrequest.bind(this);
 
 
     }
@@ -80,16 +82,16 @@ class PeopleList extends React.Component {
 
 
 
-  newrequest(){
+  newrequest(a){
     document.getElementById('controllerWarning').innerHTML="";
     this.setState({loading:true})
-    fetch('https://randomuser.me/api/?results='+this.state.count+"&gender="+this.state.gender+"&nat="+this.state.nation)
+    fetch('https://randomuser.me/api/?results='+a+"&gender="+this.state.gender+"&nat="+this.state.nation)
         .then(response => response.json())
         .then(obj => obj.results)
         .then(data => this.setState({
               loaded: true,
               loading: false,
-              data
+              data:this.state.data.concat(data)
           }))
   }
 
@@ -135,8 +137,9 @@ class PeopleList extends React.Component {
     add(a){
       document.getElementById('controllerWarning').innerHTML="";
       this.setState({prevCount:this.state.count,
-                    count:this.state.count+=a});
-      this.newrequest();
+                    count:this.state.count+=a,
+                  increments:a});
+      this.newrequest(a);
 
     }
 
@@ -145,9 +148,14 @@ class PeopleList extends React.Component {
         console.log("Number to Substract is to high!");
         document.getElementById('controllerWarning').innerHTML="Number "+a+" is to high!";
       }else{
+        let decrementValue=this.state.data.length-a;
+        console.log(a);
+        this.state.data.reverse();
         this.setState({prevCount:this.state.count,
-                        count:this.state.count-=a})
-        this.newrequest();
+                        count:this.state.count-=a,
+                        data:this.state.data.splice(a).reverse()}
+                    )
+
       }
 
     }
@@ -260,7 +268,7 @@ class PersonCard extends React.Component{
         this.setState({
           person:this.state.person.concat(nextProps.info).reverse()
         });
-        
+
       }
 
   componentDidMount(){
