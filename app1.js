@@ -96,43 +96,16 @@ class PeopleList extends React.Component {
   }
 
 
-    shoot(flag){
-      switch (flag) {
-        case "add1":
-          this.add(1)
-          break;
-          case "sub1":
-            this.sub(1)
-            break;
-        case "add10":
-          this.add(10)
-          break;
-          case "sub10":
-            this.sub(10)
-            break;
-            case "add20":
-              this.add(20)
-              break;
-              case "sub20":
-                this.sub(20)
-                break;
-                case "add50":
-                  this.add(50)
-                  break;
-                  case "sub50":
-                    this.sub(50)
-                    break;
-                    case "add100":
-                      this.add(100)
-                      break;
-                      case "sub100":
-                        this.sub(100)
-                        break;
-                            default:
+shoot(value,operation){
+if(operation==="add"){
+this.add(value);
+}else if (operation==="sub") {
+  this.sub(value);
+}else{
+  console.error("error while trying to run function add or sub!");
+}
 
-      }
-
-    }
+}
 
     add(a){
       document.getElementById('controllerWarning').innerHTML="";
@@ -335,16 +308,16 @@ render(){
   <button  type="button" data-toggle="collapse" data-target="#demo" class="btn btn-dark" id="minimize">-</button>
   <div id="demo" class="collapse show">
   <button className="btn btn-dark" id="reloadButton" onClick={()=>RenderPeople.newrequest()}>Reload</button><br />
-  <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add1")}>+1</button>
-  <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub1")}>-1</button></div>
-  <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add10")}>+10</button>
-  <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub10")}>-10</button></div>
-  <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add20")}>+20</button>
-  <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub20")}>-20</button></div>
-  <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add50")}>+50</button>
-  <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub50")}>-50</button></div>
-  <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("add100")}>+100</button>
-  <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot("sub100")}>-100</button></div>
+  <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot(1,"add")}>+1</button>
+  <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot(1,"sub")}>-1</button></div>
+  <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot(10,"add")}>+10</button>
+  <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot(10,"sub")}>-10</button></div>
+  <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot(20,"add")}>+20</button>
+  <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot(20,"sub")}>-20</button></div>
+  <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot(50,"add")}>+50</button>
+  <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot(50,"sub")}>-50</button></div>
+  <div className="centerButton"><button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot(100,"add")}>+100</button>
+  <button className="btn btn-dark btnValue" onClick={()=>RenderPeople.shoot(100,"sub")}>-100</button></div>
   <div class="form-group selector">
     <label for="sel1" className="labelEach">Select Nationality</label>
       <select class="form-control selectorEach" id="nationValue" onChange={()=>RenderPeople.updateNation()}>
