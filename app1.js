@@ -236,11 +236,32 @@ class PersonCard extends React.Component{
   }*/
 
   componentWillReceiveProps(nextProps) {
-     // Any time props.email changes, update state.
-          this.state.person.reverse();
-        this.setState({
-          person:this.state.person.concat(nextProps.info).reverse()
-        });
+     let alreadyInArray=this.state.person.map(function(a,i){
+       if(a.info[0]===nextProps.info.info[0]){
+          console.log("Person "+a.info[0]+" already in array");
+         return true;
+       }else if (a.info[0]!==nextProps.info.info[0]) {
+         return false;
+       }
+
+     })
+
+     if(alreadyInArray[0]===false||alreadyInArray[0]===undefined){
+            this.state.person.reverse();
+          this.setState({
+            person:this.state.person.concat(nextProps.info).reverse()
+          });
+          console.log(alreadyInArray);
+          
+
+     }else{
+       console.log(alreadyInArray);
+
+
+
+     }
+
+
 
       }
 
