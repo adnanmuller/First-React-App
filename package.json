@@ -1,0 +1,40 @@
+{
+  "name": "react_peoeple_app",
+  "version": "1.0.0",
+  "description": "first application with react",
+  "main": "main.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnanmuller/First-React-App.git"
+  },
+  "keywords": [
+    "application",
+    "poeple"
+  ],
+  "author": "adnan müller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adnanmuller/First-React-App/issues"
+  },
+  "homepage": "https://github.com/adnanmuller/First-React-App#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "wepack": "0.0.1"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
