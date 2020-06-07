@@ -1,4 +1,6 @@
 
+
+
 var CONFIG = {
     apiUrl: "/includes/accountInfo.inc.php"
   };
@@ -21,7 +23,6 @@ class Header extends React.Component {
 }
 
 //ReactDOM.render(<Header favcol="yellow"/>, document.getElementById('root1'));
-
 class PeopleList extends React.Component {
 
     constructor(props) {
@@ -203,6 +204,8 @@ this.add(value);
   }
 
 
+
+
 const RenderPeople= ReactDOM.render(
     <PeopleList />,
     document.getElementById('root2')
@@ -252,7 +255,7 @@ class PersonCard extends React.Component{
             person:this.state.person.concat(nextProps.info).reverse()
           });
           console.log(alreadyInArray);
-          
+
 
      }else{
        console.log(alreadyInArray);
