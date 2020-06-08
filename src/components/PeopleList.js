@@ -2,6 +2,7 @@ import React from 'react'
 import {render} from 'react-dom'
 import PersonCard from './PersonCard.js';
 
+
 class PeopleList extends React.Component {
 
     constructor(props) {

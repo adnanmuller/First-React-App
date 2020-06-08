@@ -300,3 +300,18 @@ ul .people_each {
 
 #wrongUserLogin{    color: red;
     padding: 0 5px;}
+
+    #notes{  background-image: url("http://localhost/react%20people%20app/dist/img/note2.png");
+      background-repeat: no-repeat;
+      background-position: 50% 60%;
+      background-size: cover;
+      height: 200px;
+      width: 200px;
+    position: fixed;
+  top:80px;}
+
+  #notesContainer{position: relative;
+  top: 50px;}
+
+  #notesContainer p{font-size: 10px;
+  text-align: center;}

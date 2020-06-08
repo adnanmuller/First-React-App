@@ -147,7 +147,7 @@ session_start();
   <div id="infoUser"></div>
 
 </div>
-
+<div id="notes"></div>
 
 </body>
 

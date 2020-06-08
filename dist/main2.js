@@ -11491,6 +11491,17 @@ var react_default = /*#__PURE__*/__webpack_require__.n(react);
 // EXTERNAL MODULE: ./node_modules/react-dom/index.js
 var react_dom = __webpack_require__(1);
 
+// CONCATENATED MODULE: ./src/components/Notes.js
+
+
+
+function Notes(props) {
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    id: "notesContainer"
+  }, /*#__PURE__*/react_default.a.createElement(react_default.a.Fragment, null, /*#__PURE__*/react_default.a.createElement("p", null, props.info1), /*#__PURE__*/react_default.a.createElement("p", null, props.info2)));
+}
+
+/* harmony default export */ var components_Notes = (Notes);
 // CONCATENATED MODULE: ./src/components/PersonCard.js
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -11513,6 +11524,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -11558,6 +11570,9 @@ var PersonCard_PersonCard = /*#__PURE__*/function (_React$Component) {
         });
         console.log(alreadyInArray);
       } else {
+        Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(components_Notes, {
+          info1: "".concat(nextProps.info.info[0], " already in favorite")
+        }), document.getElementById("notes"));
         console.log(alreadyInArray);
       }
     }
@@ -12246,6 +12261,7 @@ var Account_Account = /*#__PURE__*/function (_React$Component) {
 /* harmony default export */ var components_Account = (Account_Account);
 // CONCATENATED MODULE: ./src/index.js
 var $ = __webpack_require__(3);
+
 
 
 

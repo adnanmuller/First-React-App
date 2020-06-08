@@ -1,5 +1,6 @@
 import React from 'react'
 import {render} from 'react-dom'
+import Notes from './Notes.js';
 
 
 class PersonCard extends React.Component{
@@ -36,6 +37,8 @@ class PersonCard extends React.Component{
 
 
      }else{
+       render(<Notes info1={`${nextProps.info.info[0]} already in favorite`} />,document.getElementById("notes"));
+
        console.log(alreadyInArray);
 
 
