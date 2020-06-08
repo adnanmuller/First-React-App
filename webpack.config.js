@@ -6,6 +6,9 @@ module.exports={
     filename:"main2.js",
     path:path.resolve(__dirname,"dist")
   },
+  optimization: {
+        minimize: false
+    },
   module:{
     rules:[
     {
@@ -18,6 +21,7 @@ module.exports={
         }
       }
     }
+
   ]
 }
 }
