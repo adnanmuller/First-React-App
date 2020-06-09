@@ -18,6 +18,7 @@ class PersonCard extends React.Component{
   }*/
 
   componentWillReceiveProps(nextProps) {
+     let favoritePeopleCount=this.state.person.length;
      let alreadyInArray=this.state.person.map(function(a,i){
        if(a.info[0]===nextProps.info.info[0]){
           console.log("Person "+a.info[0]+" already in array");
@@ -26,6 +27,7 @@ class PersonCard extends React.Component{
          return false;
        }
 
+
      })
 
      if(alreadyInArray.indexOf(true)==-1||alreadyInArray[0]===undefined){
@@ -33,17 +35,15 @@ class PersonCard extends React.Component{
           this.setState({
             person:this.state.person.concat(nextProps.info).reverse()
           });
+          render(<Notes  info2={`${nextProps.info.info[0]} added to favorite`} info3={`You have ${favoritePeopleCount+1} in favorite`} />,document.getElementById("notes"));
           console.log(alreadyInArray);
 
 
      }else{
-       render(<Notes info1={`${nextProps.info.info[0]} already in favorite`} />,document.getElementById("notes"));
-
+       render(<Notes info1={`${nextProps.info.info[0]} already in favorite`}  info3={`You have ${favoritePeopleCount} in favorite`} />,document.getElementById("notes"));
        console.log(alreadyInArray);
+         }
 
-
-
-     }
 
 
 

@@ -5,8 +5,9 @@ function Notes(props){
   return(
     <div id="notesContainer">
     <React.Fragment>
-    <p>{props.info1}</p>
-    <p>{props.info2}</p>
+    {props.info1?<p className="text-danger">{props.info1}</p>:""}
+    {props.info2?<p>{props.info2}</p>:""}
+    {props.info3?<p>{props.info3}</p>:""}
     </React.Fragment>
     </div>
   )

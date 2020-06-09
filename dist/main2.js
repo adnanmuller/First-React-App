@@ -11498,7 +11498,9 @@ var react_dom = __webpack_require__(1);
 function Notes(props) {
   return /*#__PURE__*/react_default.a.createElement("div", {
     id: "notesContainer"
-  }, /*#__PURE__*/react_default.a.createElement(react_default.a.Fragment, null, /*#__PURE__*/react_default.a.createElement("p", null, props.info1), /*#__PURE__*/react_default.a.createElement("p", null, props.info2)));
+  }, /*#__PURE__*/react_default.a.createElement(react_default.a.Fragment, null, props.info1 ? /*#__PURE__*/react_default.a.createElement("p", {
+    className: "text-danger"
+  }, props.info1) : "", props.info2 ? /*#__PURE__*/react_default.a.createElement("p", null, props.info2) : "", props.info3 ? /*#__PURE__*/react_default.a.createElement("p", null, props.info3) : ""));
 }
 
 /* harmony default export */ var components_Notes = (Notes);
@@ -11554,6 +11556,7 @@ var PersonCard_PersonCard = /*#__PURE__*/function (_React$Component) {
   _createClass(PersonCard, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
+      var favoritePeopleCount = this.state.person.length;
       var alreadyInArray = this.state.person.map(function (a, i) {
         if (a.info[0] === nextProps.info.info[0]) {
           console.log("Person " + a.info[0] + " already in array");
@@ -11568,10 +11571,15 @@ var PersonCard_PersonCard = /*#__PURE__*/function (_React$Component) {
         this.setState({
           person: this.state.person.concat(nextProps.info).reverse()
         });
+        Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(components_Notes, {
+          info2: "".concat(nextProps.info.info[0], " added to favorite"),
+          info3: "You have ".concat(favoritePeopleCount + 1, " in favorite")
+        }), document.getElementById("notes"));
         console.log(alreadyInArray);
       } else {
         Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(components_Notes, {
-          info1: "".concat(nextProps.info.info[0], " already in favorite")
+          info1: "".concat(nextProps.info.info[0], " already in favorite"),
+          info3: "You have ".concat(favoritePeopleCount, " in favorite")
         }), document.getElementById("notes"));
         console.log(alreadyInArray);
       }
