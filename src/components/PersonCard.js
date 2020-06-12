@@ -1,6 +1,8 @@
 import React from 'react'
 import {render} from 'react-dom'
 import Notes from './Notes.js';
+import {Transition} from "react-transition-group";
+import {CSSTransition, TransitionGroup} from "react-transition-group";
 
 
 class PersonCard extends React.Component{
@@ -71,9 +73,17 @@ class PersonCard extends React.Component{
 render(){
 
   return(<div className="people_card" id="dynamicHeight">
+ <TransitionGroup>
     {this.state.person.map((person, i) => {
-          console.log("array map nr: "+i+person);
-      return(<div className="peole_card_each" >
+
+      return(<CSSTransition key={person.info[13]} classNames={{
+        enter:"animate__animated",
+        enterActive:"animate__lightSpeedInRight",
+        exit:"animate__animated",
+        exitActive:"animate__lightSpeedOutRight"
+      }} timeout={1600} >
+        <React.Fragment>
+        <div className="peole_card_each" >
               <img className="profileIMG" src={person.info[11]} />
               <img src="img/bin.png" className="binPersonCard" alt="bin" onClick={()=>this.removeCard(person.info[15])}/>
               <div className="paraInfo"><h2 className="name"> {person.info[0]} {person.info[1]}</h2>
@@ -90,11 +100,16 @@ render(){
 
 
             </div>
+            </React.Fragment>
+      </CSSTransition>
+
   )})
 
 }
+</TransitionGroup>
+</div>
+  )
 
-</div>)
 }};
 
 

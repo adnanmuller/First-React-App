@@ -305,13 +305,31 @@ ul .people_each {
       background-repeat: no-repeat;
       background-position: 50% 60%;
       background-size: cover;
-      height: 200px;
-      width: 200px;
+      height: 250px;
+      width: 250px;
     position: fixed;
   top:80px;}
 
   #notesContainer{position: relative;
   top: 50px;}
 
-  #notesContainer p{font-size: 10px;
+  #notesContainer {font-size: 10px;
   text-align: center;min-height: 14.4px;}
+
+#NotesInfo{font-size: 10px;animation: slide-up 0.4s ease;}
+
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        transform: scaleX(1);
+        transform: scaleY(1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(10px);
+        transform: scaleX(2);
+
+    }
+}

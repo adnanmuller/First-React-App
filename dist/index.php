@@ -11,7 +11,7 @@ session_start();
   <script  src="https://unpkg.com/axios@0.17/dist/axios.min.js"></script>
 
   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-  <script type="text/babel"  src="main2.js" ></script>
+
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/animate.css">
@@ -26,7 +26,8 @@ session_start();
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+  <script type="text/babel"  src="main2.js" ></script>
   <link rel="stylesheet" href="css/main.css">
 
 </head>

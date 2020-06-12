@@ -14,7 +14,7 @@ class Account extends React.Component {
 
     componentWillMount() {
 
-      axios.get(CONFIG.apiUrl + "?delay=1").then(function(response) {
+      axios.get(CONFIG.apiUrl + "?delay=0.5").then(function(response) {
         this.setState({account:response.data});}.bind(this))
 
   }
